@@ -2,7 +2,7 @@ $ = $ || null;
 
 var API;
 API = {
-	Location: "http://api.osu.miz.hexide.com",
+	Location: "http://osu.hexide.com",
 
 	Beatmap: function(id, success, fail)
 	{
@@ -30,7 +30,7 @@ API = {
 		{
 			if(!data.hasOwnProperty(key))
 				continue;
-			
+
 			tmp.push("maps." + key + ".like." + data[key]);
 		}
 		return "/search/maps.ranked_id;maps.title/" + tmp.join("/")+ "/";

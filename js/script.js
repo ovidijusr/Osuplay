@@ -55,8 +55,8 @@ function forward(){
 	}
 	playsong(queue[nextsong+1]);
 	window.location.hash = queue[nextsong+1];
-	
-	
+
+
 }
 function backward(){
 	var nextsong = queue.indexOf(parseInt(location.hash.slice(1)));
@@ -74,13 +74,13 @@ function resultobject(id, track)
 {
 	return '<div class="col-sm-2 col-xs-6">' +
 			'<div class="thumbnail">' +
-				'<div class="playthumb" data-id="' + id + '" style="background:url(http://api.osu.miz.hexide.com/beatmaps/' + id + '/content/image/custom/165x165/crop); background-size:contain">' +
+				'<div class="playthumb" data-id="' + id + '" style="background:url(http://osu.hexide.com/beatmaps/' + id + '/content/image/custom/165x165/crop); background-size:contain">' +
 					'<div class="hoverfade"><span class="glyphicon glyphicon-play thumbplay"></span></div>' +
 				'</div>' +
 				'<div class="caption">' +
 					'<h4>' + track + '</h4>' +
 				'</div>' +
-				
+
 			'</div>' +
 		'</div>';
 }
@@ -91,7 +91,7 @@ function pause(){
 	$(".big").addClass("glyphicon-play play").removeClass("glyphicon-pause pause");
 }
 function thumbb(id,text){
-	thumb = "<div class='playthumb' data-id='"+id+"' style='background:url(http://api.osu.miz.hexide.com/beatmaps/"+id+"/content/image/custom/256x256/crop)'background-size:contain;>"+text+"</div>";
+	thumb = "<div class='playthumb' data-id='"+id+"' style='background:url(http://osu.hexide.com/beatmaps/"+id+"/content/image/custom/256x256/crop)'background-size:contain;>"+text+"</div>";
 	return thumb;
 }
 function play(){
@@ -125,7 +125,7 @@ function volumescroll(way){
 
 function loadbgid(id){ // anti chrome background derp
 	$(".preload").remove();
-	imgurl = "http://api.osu.miz.hexide.com/beatmaps/" + id + "/content/image/full";
+	imgurl = "http://osu.hexide.com/beatmaps/" + id + "/content/image/full";
 	$("body").append("<img class='preload' width = '1px' style='opacity:0;' src='"+imgurl+"'>");
 	$( ".preload" ).load(function() {
 		$("body").css("background-image", "url('"+imgurl+"')").load(function () {
@@ -133,10 +133,10 @@ function loadbgid(id){ // anti chrome background derp
 			var x = 1;
 			$(window).scrollTop(y+x);
 			$(window).scrollTop(y-x);
-			
+
 		});
 	});
-	
+
 }
 function search(text){
 	if(text.length < 3){
@@ -151,7 +151,7 @@ function search(text){
 		},
 		function(data)
 		{
-			
+
 			var i = 0;
 			$.each(data, function() {
 				queue.push(this.ranked_id);
@@ -164,7 +164,7 @@ function search(text){
 }
 function playsong(id)
 {
-	
+
 	if(isNaN(id)){
 		return false;
 	}
@@ -190,17 +190,17 @@ function playsong(id)
 	$(".songname").text("Osuplay player ^^");
 
 	$(audio).
-		attr("src", "http://api.osu.miz.hexide.com/beatmaps/" + id + "/content/mp3/full").
+		attr("src", "http://osu.hexide.com/beatmaps/" + id + "/content/mp3/full").
 		attr("data-songid", id).
 		prop('volume', volume.val());
 
 	audio.pause();
 	audio.load();
 	audio.play();
-	
+
 	$(".jumbotron").css("background-color","rgba(93, 156, 236, 0.63)");
 	loadbgid(id);
-	
+
 
 }
 function scrobblecheck(){
@@ -235,14 +235,14 @@ $(function() {
 		if(LASTFM.isauth()) {
 			scrobblecheck();
 		}
-		
+
 		if(audio.currentTime === audio.duration){
 			forward();
 		}
 		if($("#timetrack").is(":focus") == false) {
 		$("#timetrack").val(audio.currentTime);
 		$("#timetrack").attr("max",audio.duration);
-			
+
 		}
 	},500);
 	audio = $(".player:first")[0];
@@ -256,7 +256,7 @@ $(function() {
 		audio.currentTime = time;
 		$(this).blur();
 	});
-	
+
 	volume.change(function(){
 		var vol = $(this).val();
 		$(audio).prop('volume', vol);
@@ -277,7 +277,7 @@ $(function() {
 		}
 	);
 	$( "body" ).on( "click", ".playthumb", function() {
-		
+
 		window.location.hash = $(this).data("id");
 		maindiv = $(this).parent;
 	});
@@ -285,24 +285,24 @@ $(function() {
 		if (event.originalEvent.wheelDelta >= 0) {
 			if($(".controlbar").is(":hover")) {
 				document.ontouchmove = function(e){ e.preventDefault(); }
-				
+
 				volumescroll("up");
 			}
-			
+
 		}
 		else {
 			if($(".controlbar").is(":hover")) {
 				document.ontouchmove = function(e){ e.preventDefault(); }
-				
+
 				volumescroll("down");
 			}
 		}
 	});
-	
-	
+
+
 	$('.flat-textbox').bind("enterKey",function(e){
 		search($(".flat-textbox").val());
-		
+
 	});
 	window.onkeydown = function (event) {
 		if (event.keyCode === 32) {
@@ -311,10 +311,10 @@ $(function() {
 				playtoggle();
 
 			}
-			
+
 		}
 	};
-	
+
 	$('.flat-textbox').keyup(function(e){
 		if(e.keyCode == 13)
 		{
