@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import FaBeer from 'react-icons/lib/fa/beer';
+import Footer from './Footer';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
         Welcome to Osuplay
+        <Footer />
       </div>
     );
   }
