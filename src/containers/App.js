@@ -1,22 +1,35 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import osuplay from '../reducers';
+import { connect } from 'react-redux';
 import './App.css';
 import Footer from './Footer';
+import test from '../actions/index';
 
-let store = createStore(osuplay);
+// let store = createStore(osuplay);
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="app">
+        <div
+          className="app"
+          onClick={() => this.props.actions.todoActions('a')}
+        >
           Welcome to Osuplay
+
           <Footer />
         </div>
-      </Provider>
     );
   }
+
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => ({
+  propName: 'tst',
+})
+const mapDispatchToProps = (dispatch) => (
+  {
+    actions: {
+      todoActions: (id) => dispatch(test(id)),
+    }
+  }
+)
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
