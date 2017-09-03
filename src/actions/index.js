@@ -1,7 +1,17 @@
-const test = text => {
+export const test = text => {
   return {
     type: 'SET_VOLUME',
     volume: text,
   }
 }
-export default test;
+export const setSong = songName => (
+  {
+    type: 'SET_SONG',
+    song: songName,
+  }
+)
+export const togglePause = pause => (
+  {
+    type: 'TOGGLE_PAUSE'
+  }
+)

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import playerSettings from './playerSettings';
+import player from './player';
 
 const osuplay = combineReducers ({
-  playerSettings,
+  player,
 })
 
 export default osuplay;
