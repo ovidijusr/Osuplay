@@ -12,11 +12,6 @@ class Footer extends Component {
     const { player } = this.props;
     return (
         <div className="footer">
-          <h1
-            onClick={() => this.props.actions.setPause(false)}
-          >
-            Play
-          </h1>
           <PlayerButton
             className="player-button"
             onClick={() => this.props.actions.togglePause()}
