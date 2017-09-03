@@ -2,10 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './Footer.css'
 import Player from '../components/Player';
+import PlayerButton from '../components/PlayerButton';
 import * as actions from '../actions/index';
+import playButton from '../images/icons/music-play.svg';
+import pauseButton from '../images/icons/music-pause.svg';
 class Footer extends Component {
 
   render() {
+    const { player } = this.props;
     return (
         <div className="footer">
           <h1
@@ -13,18 +17,16 @@ class Footer extends Component {
           >
             Play
           </h1>
-          <h1
+          <PlayerButton
+            className="player-button"
             onClick={() => this.props.actions.togglePause()}
-          >
-            {this.props.player.pause &&
-              'Play'
+            icon={player.pause ?
+              playButton :
+              pauseButton
             }
-            {!this.props.player.pause &&
-              'Pause'
-            }
-          </h1>
+          />
           <Player
-            {...this.props.player}
+            {...player}
           />
         </div>
     )
