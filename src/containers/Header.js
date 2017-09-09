@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './Header.css'
 import PlayIcon from '../images/icons/music-play.svg'
+import Search from '../components/Search';
 const propTypes = {}
 
 const defaultProps = {}
@@ -24,6 +25,9 @@ class Header extends Component {
             width="32px"
           />
         </h1>
+        <div className="header__search">
+          <Search />
+        </div>
       </div>
     )
   }
