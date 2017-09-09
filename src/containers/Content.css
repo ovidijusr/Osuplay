@@ -1,2 +1,5 @@
 .content {
-  background: red; }
+  background: blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }

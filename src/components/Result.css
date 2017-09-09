@@ -1,0 +1,6 @@
+.result {
+  width: 128px;
+  margin: 20px 10px;
+  height: 128px;
+  background-size: cover;
+  display: flex; }
