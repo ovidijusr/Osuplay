@@ -29,6 +29,7 @@ class Header extends Component {
         </h1>
         <div className="header__search">
           <Search
+            results={this.props.results}
             actions={this.props.actions}
           />
         </div>
@@ -42,10 +43,11 @@ Header.propTypes = propTypes
 Header.defaultProps = defaultProps
 
 const mapStateToProps = (state, ownProps) => ({
-  search: state.search,
+  results: state.results,
 })
 const mapDispatchToProps = (dispatch) => ({
   actions: {
+    updateSearch: (data) => dispatch(results.updateSearch(data)),
     searchSong: (data) => dispatch(results.searchSong(data))
   }
 })

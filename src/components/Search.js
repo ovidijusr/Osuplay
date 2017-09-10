@@ -10,11 +10,13 @@ export default class Search extends Component {
   render() {
     return (
       <div className="search">
-        <input className="search__input" type="text" name="searchbar"/>
+        <input
+          onKeyUp={(e) => this.props.actions.updateSearch(e.target.value)}
+          className="search__input" type="text" name="searchbar"/>
         <button
           className="search__button"
           onClick={() => this.props.actions.searchSong({
-            name: "cat",
+            name: this.props.results.search.query,
           })}
         >Find</button>
       </div>

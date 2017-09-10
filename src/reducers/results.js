@@ -2,22 +2,36 @@ const initialState = {
   search: {
     isLoading: false,
     query: "",
-    results: [],
+    result: [],
   }
 };
 
 const results = (state = initialState, action) => {
   switch (action.type) {
+    case 'UPDATE_SEARCH' :
+      return {
+        ...state,
+        search : {
+          ...state.search,
+          query: action.payload,
+        }
+      }
     case 'FETCHING_SEARCH':
       return {
         ...state,
-        isLoading: true,
+        search : {
+          ...state.search,
+          isLoading: true,
+        }
       }
     case 'RECEIVED_SEARCH':
       return {
         ...state,
-        isLoading: false,
-        results: action.payload,
+        search : {
+          ...state.search,
+          isLoading: false,
+          result: action.payload,
+        }
       }
 
     default:

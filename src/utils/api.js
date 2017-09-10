@@ -3,17 +3,30 @@ const API = {
 
 
   search: (parameters) => {
-    const searchString = API._buildSearchString(parameters);
-    API._sendRequest(searchString);
+    return new Promise ((resolve, reject) => {
+      const searchString = API._buildSearchString(parameters);
+      API._sendRequest(searchString, resolve);
+    })
   },
-  _sendRequest: (request) => {
+
+  getSong: (id) => {
+    return `${API.location}/beatmaps/${id}/content/mp3/full`;
+  },
+
+  getImage: (id,x,y) => {
+    return `${API.location}/beatmaps/${id}/content/image/custom/${x}x${y}/crop`;
+  },
+
+  _sendRequest: (request, resolve) => {
     const adress = API.location + request;
     fetch(adress)
+
       .then((response) => {
         return response.json();
       })
+
       .then((json) => {
-        console.log(json);
+        resolve(json);
       })
   },
 

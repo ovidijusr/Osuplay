@@ -12,7 +12,8 @@ const player = (state = initialState, action) => {
     case 'SET_SONG':
       return {
         ...state,
-        song: action.song,
+        isPlaying: true,
+        song: action.payload,
       }
     case 'SET_VOLUME':
       return {
