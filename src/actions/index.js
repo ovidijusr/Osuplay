@@ -1,17 +1,10 @@
-export const test = text => {
-  return {
-    type: 'SET_VOLUME',
-    volume: text,
-  }
-}
-export const setSong = songName => (
+import { createAction } from 'redux-actions';
+
+export const setSong = payload => (dispatch, getState) => (
   {
     type: 'SET_SONG',
-    song: songName,
+    song: payload,
   }
 )
-export const togglePause = pause => (
-  {
-    type: 'TOGGLE_PAUSE'
-  }
-)
+
+export const togglePause = createAction('TOGGLE_PAUSE');

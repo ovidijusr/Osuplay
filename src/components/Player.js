@@ -117,7 +117,7 @@ class Player extends Component {
 }
 
 Player.defaultProps = {
-  autoPlay: true,
+  autoPlay: false,
   children: null,
   className: '',
   controls: false,

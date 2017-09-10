@@ -1,4 +1,5 @@
 const initialState = {
+  isPlaying: false,
   song: "http://osu.hexide.com/beatmaps/14514/content/mp3/full"
 }
 const player = (state = initialState, action) => {

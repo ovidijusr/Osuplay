@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Header.css'
+import * as results from '../actions/results';
 import PlayIcon from '../images/icons/music-play.svg'
-import Search from '../components/Search';
+import Search from '../components/Search'
 const propTypes = {}
 
 const defaultProps = {}
@@ -26,7 +28,9 @@ class Header extends Component {
           />
         </h1>
         <div className="header__search">
-          <Search />
+          <Search
+            actions={this.props.actions}
+          />
         </div>
       </div>
     )
@@ -37,4 +41,12 @@ Header.propTypes = propTypes
 
 Header.defaultProps = defaultProps
 
-export default Header
+const mapStateToProps = (state, ownProps) => ({
+  search: state.search,
+})
+const mapDispatchToProps = (dispatch) => ({
+  actions: {
+    searchSong: (data) => dispatch(results.searchSong(data))
+  }
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
