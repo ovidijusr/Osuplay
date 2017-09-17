@@ -4,3 +4,13 @@
   height: 128px;
   background-size: cover;
   display: flex; }
+  .result__text-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px; }
+  .result__text-song-name {
+    margin-bottom: 5px;
+    font-size: 14px; }
+  .result__text-song-artist {
+    color: gray;
+    font-size: 10px; }

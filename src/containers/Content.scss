@@ -2,4 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  &__result {
+    flex-basis: 20%;
+  }
 }

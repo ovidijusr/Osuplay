@@ -13,6 +13,8 @@ class Content extends Component {
       <Result
         onClick={() => actions.setSong(API.getSong(result.ranked_id))}
         background={API.getImage(result.ranked_id, 128, 128)}
+        artist={result.title.split("-")[0]}
+        songName={result.title.split("-")[1]}
         className="content__result result"
         key={i}
       >

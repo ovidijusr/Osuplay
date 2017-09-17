@@ -2,3 +2,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
+  .content__result {
+    flex-basis: 20%; }
