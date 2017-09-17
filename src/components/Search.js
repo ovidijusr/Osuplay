@@ -11,14 +11,11 @@ export default class Search extends Component {
     return (
       <div className="search">
         <input
-          onKeyUp={(e) => this.props.actions.updateSearch(e.target.value)}
-          className="search__input" type="text" name="searchbar"/>
-        <button
-          className="search__button"
-          onClick={() => this.props.actions.searchSong({
-            name: this.props.results.search.query,
+          onKeyUp={(e) => this.props.actions.searchSong({
+            name: e.target.value,
           })}
-        >Find</button>
+          placeholder="Enter your favorite song or artist name!"
+          className="search__input" type="text" name="searchbar"/>
       </div>
     )
   }

@@ -3,7 +3,10 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Header.css'
 import * as results from '../actions/results';
+
 import PlayIcon from '../images/icons/music-play.svg'
+import userIcon from '../images/icons/user.svg'
+
 import Search from '../components/Search'
 const propTypes = {}
 
@@ -32,6 +35,12 @@ class Header extends Component {
             results={this.props.results}
             actions={this.props.actions}
           />
+        </div>
+        <div className="header__menu">
+          <img
+            src={userIcon}
+            width="32px"
+            alt="user icon"/>
         </div>
       </div>
     )
