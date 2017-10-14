@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import './Header.css'
 import * as results from '../actions/results';
 
+import osuPlayLogo from '../images/icons/osuplay-logo.svg';
 import PlayIcon from '../images/icons/music-play.svg'
 import userIcon from '../images/icons/user.svg'
 
@@ -22,14 +23,11 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <h1 className="header__title">
-          <span>Osu</span>
-          <img
-            alt="logo"
-            src={PlayIcon}
-            width="32px"
-          />
-        </h1>
+        <img
+          alt="Logo"
+          className="header__logo"
+          src={osuPlayLogo}
+        />
         <div className="header__search">
           <Search
             results={this.props.results}
@@ -39,7 +37,7 @@ class Header extends Component {
         <div className="header__menu">
           <img
             src={userIcon}
-            width="32px"
+            width="40px"
             alt="user icon"/>
         </div>
       </div>

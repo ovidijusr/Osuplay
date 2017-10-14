@@ -1,0 +1,74 @@
+<svg width="356" height="356" viewBox="0 0 356 356" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Component</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1763 -315)">
+<g id="Component" filter="url(#filter0_d)">
+<g id="Ellipse 3">
+<use xlink:href="#path0_fill" transform="translate(1768 320)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse 2">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path1_fill" fill="white" transform="translate(1873 412)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path2_stroke_2x" transform="translate(1873 412)" fill="#F663A5"/>
+</g>
+</g>
+<g id="Ellipse 2">
+<mask id="mask1_outline_ins">
+<use xlink:href="#path1_fill" fill="white" transform="translate(1812 462)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path3_stroke_2x" transform="translate(1812 462)" fill="url(#paint2_linear)"/>
+</g>
+</g>
+<g id="Ellipse 2">
+<mask id="mask2_outline_ins">
+<use xlink:href="#path1_fill" fill="white" transform="translate(1873 514)"/>
+</mask>
+<g mask="url(#mask2_outline_ins)">
+<use xlink:href="#path4_stroke_2x" transform="translate(1873 514)" fill="url(#paint3_linear)"/>
+</g>
+</g>
+<g id="Polygon">
+<mask id="mask3_outline_ins">
+<use xlink:href="#path5_fill" fill="white" transform="matrix(-4.37114e-08 1 -1 -4.37114e-08 2096 395)"/>
+</mask>
+<g mask="url(#mask3_outline_ins)">
+<use xlink:href="#path6_stroke_2x" transform="matrix(-4.37114e-08 1 -1 -4.37114e-08 2096 395)" fill="url(#paint4_linear)"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="1763" y="315" width="356" height="356" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="0"/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint2_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.73517e-15 61 -61 3.73517e-15 61 -3.73517e-15)">
+<stop offset="0.0165746" stop-color="#E95F9C"/>
+<stop offset="1" stop-color="#FF66AA"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.73517e-15 61 -61 3.73517e-15 61 -3.73517e-15)">
+<stop offset="0" stop-color="#E95F9C"/>
+<stop offset="0.9999" stop-color="#E95F9C"/>
+<stop offset="1" stop-color="#9B38CB"/>
+</linearGradient>
+<linearGradient id="paint4_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.20015e-14 198 -196 1.2124e-14 196 -1.2124e-14)">
+<stop offset="0.447514" stop-color="#FF66AA"/>
+<stop offset="0.59116" stop-color="#E95F9C"/>
+</linearGradient>
+<path id="path0_fill" d="M 346 173C 346 268.545 268.545 346 173 346C 77.4547 346 0 268.545 0 173C 0 77.4547 77.4547 0 173 0C 268.545 0 346 77.4547 346 173Z"/>
+<path id="path1_fill" d="M 61 30.5C 61 47.3447 47.3447 61 30.5 61C 13.6553 61 0 47.3447 0 30.5C 0 13.6553 13.6553 0 30.5 0C 47.3447 0 61 13.6553 61 30.5Z"/>
+<path id="path2_stroke_2x" d="M 41 30.5C 41 36.299 36.299 41 30.5 41L 30.5 81C 58.3904 81 81 58.3904 81 30.5L 41 30.5ZM 30.5 41C 24.701 41 20 36.299 20 30.5L -20 30.5C -20 58.3904 2.60962 81 30.5 81L 30.5 41ZM 20 30.5C 20 24.701 24.701 20 30.5 20L 30.5 -20C 2.60962 -20 -20 2.60962 -20 30.5L 20 30.5ZM 30.5 20C 36.299 20 41 24.701 41 30.5L 81 30.5C 81 2.60962 58.3904 -20 30.5 -20L 30.5 20Z"/>
+<path id="path3_stroke_2x" d="M 46 30.5C 46 39.0604 39.0604 46 30.5 46L 30.5 76C 55.629 76 76 55.629 76 30.5L 46 30.5ZM 30.5 46C 21.9396 46 15 39.0604 15 30.5L -15 30.5C -15 55.629 5.37104 76 30.5 76L 30.5 46ZM 15 30.5C 15 21.9396 21.9396 15 30.5 15L 30.5 -15C 5.37104 -15 -15 5.37104 -15 30.5L 15 30.5ZM 30.5 15C 39.0604 15 46 21.9396 46 30.5L 76 30.5C 76 5.37104 55.629 -15 30.5 -15L 30.5 15Z"/>
+<path id="path4_stroke_2x" d="M 51 30.5C 51 41.8218 41.8218 51 30.5 51L 30.5 71C 52.8675 71 71 52.8675 71 30.5L 51 30.5ZM 30.5 51C 19.1782 51 10 41.8218 10 30.5L -10 30.5C -10 52.8675 8.13247 71 30.5 71L 30.5 51ZM 10 30.5C 10 19.1782 19.1782 10 30.5 10L 30.5 -10C 8.13247 -10 -10 8.13247 -10 30.5L 10 30.5ZM 30.5 10C 41.8218 10 51 19.1782 51 30.5L 71 30.5C 71 8.13247 52.8675 -10 30.5 -10L 30.5 10Z"/>
+<path id="path5_fill" d="M 89.3179 15.1913C 93.157 8.47391 102.843 8.47391 106.682 15.1913L 174.319 133.538C 178.13 140.205 173.316 148.5 165.637 148.5L 30.3627 148.5C 22.6841 148.5 17.8705 140.205 21.6806 133.538L 89.3179 15.1913Z"/>
+<path id="path6_stroke_2x" d="M 174.319 133.538L 156.955 143.462L 174.319 133.538ZM 89.3179 15.1913L 106.682 25.1152L 89.3179 15.1913ZM 21.6806 133.538L 4.31637 123.614L 21.6806 133.538ZM 89.3179 25.1152L 156.955 143.462L 191.684 123.614L 124.046 5.26732L 89.3179 25.1152ZM 165.637 128.5L 30.3627 128.5L 30.3627 168.5L 165.637 168.5L 165.637 128.5ZM 39.0448 143.462L 106.682 25.1152L 71.9537 5.26732L 4.31637 123.614L 39.0448 143.462ZM 124.046 5.26732C 112.529 -14.8848 83.471 -14.8848 71.9537 5.26732L 106.682 25.1152C 102.843 31.8326 93.157 31.8326 89.3179 25.1152L 124.046 5.26732ZM 156.955 143.462C 153.145 136.795 157.959 128.5 165.637 128.5L 165.637 168.5C 188.673 168.5 203.114 143.614 191.684 123.614L 156.955 143.462ZM 30.3627 128.5C 38.0412 128.5 42.8548 136.795 39.0448 143.462L 4.31637 123.614C -7.11384 143.614 7.32707 168.5 30.3627 168.5L 30.3627 128.5Z"/>
+</defs>
+</svg>
