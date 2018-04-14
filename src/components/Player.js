@@ -76,12 +76,20 @@ class Player extends Component {
   }
 
   render() {
-    if(this.props.pause) {
-      this.audioEl.pause();
-    } else {
-      !this.audioEl || this.audioEl.play();
-    }
+    if (typeof this.props.pause === "boolean") {
+      if (this.props.pause && !this.audioEl.paused) {
+        this.audioEl.pause()
+      }
 
+      if(this.audioEl.src !== this.props.song) {
+        this.audioEl.src = this.props.song;
+        this.audioEl.play();
+      }
+
+      if (!this.props.pause && this.audioEl.paused) {
+        this.audioEl.play();
+      }
+    }
 
     const incompatibilityMessage = this.props.children || (
       <p>Your browser does not support the <code>audio</code> element.</p>
@@ -104,7 +112,6 @@ class Player extends Component {
         onPlay={this.onPlay}
         preload={this.props.preload}
         ref={(ref) => { this.audioEl = ref; }}
-        src={this.props.song}
         style={this.props.style}
         title={title}
       >
@@ -115,7 +122,7 @@ class Player extends Component {
 }
 
 Player.defaultProps = {
-  autoPlay: true,
+  autoPlay: false,
   children: null,
   className: '',
   controls: false,
