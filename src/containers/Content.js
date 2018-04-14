@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './Content.css';
-import * as actions from '../actions/index';
+import * as actions from '../actions/player';
 import Result from '../components/Result';
 import API from '../utils/api';
 

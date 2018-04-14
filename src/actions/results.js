@@ -1,5 +1,4 @@
 import API from '../utils/api';
-import _ from 'underscore';
 import { createAction } from 'redux-actions';
 
 export const updateSearch = createAction('UPDATE_SEARCH');

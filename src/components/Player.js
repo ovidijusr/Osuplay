@@ -78,10 +78,8 @@ class Player extends Component {
   render() {
     if(this.props.pause) {
       this.audioEl.pause();
-      console.log("pausing");
     } else {
       !this.audioEl || this.audioEl.play();
-      console.log("playing");
     }
 
 
@@ -117,7 +115,7 @@ class Player extends Component {
 }
 
 Player.defaultProps = {
-  autoPlay: false,
+  autoPlay: true,
   children: null,
   className: '',
   controls: false,

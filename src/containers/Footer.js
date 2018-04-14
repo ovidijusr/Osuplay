@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './Footer.css'
 import Player from '../components/Player';
 import PlayerButton from '../components/PlayerButton';
-import * as actions from '../actions/index';
+import * as actions from '../actions/player';
 import playButton from '../images/icons/music-play.svg';
 import pauseButton from '../images/icons/music-pause.svg';
 class Footer extends Component {
@@ -15,10 +15,11 @@ class Footer extends Component {
           <PlayerButton
             className="player-button"
             onClick={() => this.props.actions.togglePause()}
-            icon={player.pause ?
+            icon={player.pause || !player.song ?
               playButton :
               pauseButton
             }
+            src=""
           />
           <Player
             {...player}

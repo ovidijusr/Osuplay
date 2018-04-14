@@ -1,6 +1,5 @@
 const initialState = {
-  isPlaying: false,
-  song: "http://osu.hexide.com/beatmaps/14514/content/mp3/full"
+  state: false,
 }
 const player = (state = initialState, action) => {
   switch (action.type) {
@@ -12,7 +11,6 @@ const player = (state = initialState, action) => {
     case 'SET_SONG':
       return {
         ...state,
-        isPlaying: true,
         song: action.payload,
       }
     case 'SET_VOLUME':

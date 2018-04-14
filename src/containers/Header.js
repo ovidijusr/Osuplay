@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 import './Header.css'
 import * as results from '../actions/results';
 
 import osuPlayLogo from '../images/icons/osuplay-logo.svg';
-import PlayIcon from '../images/icons/music-play.svg'
+
 import userIcon from '../images/icons/user.svg'
 
 import Search from '../components/Search'

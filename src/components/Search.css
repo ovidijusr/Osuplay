@@ -6,14 +6,13 @@
   .search__input {
     height: 40px;
     width: 100%;
-    padding: 0px 5px;
     font-size: 18px;
     color: rgba(10, 10, 10, 0.62);
     margin: 0;
     border: 0;
     border-radius: 40px;
     padding: 0 12px;
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.48);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center; }
     .search__input:focus {
       text-align: left; }
