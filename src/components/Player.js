@@ -5,6 +5,14 @@ class Player extends Component {
   componentDidMount() {
     const audio = this.audioEl;
 
+    setInterval(() => {
+      const currentAudioTime = Math.round(audio.currentTime);
+      if (this.props.currentTime !== currentAudioTime) {
+        this.props.actions.setCurrentTime(currentAudioTime);
+      }
+
+    }, 1000)
+
     audio.addEventListener('error', (e) => {
       this.props.onError(e);
     });

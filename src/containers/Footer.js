@@ -9,7 +9,7 @@ import pauseButton from '../images/icons/music-pause.svg';
 class Footer extends Component {
 
   render() {
-    const { player } = this.props;
+    const { player, actions } = this.props;
     return (
         <div className="footer">
           <PlayerButton
@@ -22,7 +22,7 @@ class Footer extends Component {
             src=""
           />
           <Player
-            {...player}
+            {...({...player, actions: {...actions}} )}
           />
         </div>
     )
@@ -36,6 +36,7 @@ const mapDispatchToProps = (dispatch) => (
   {
     actions: {
       setSong: (id) => dispatch(actions.setSong(id)),
+      setCurrentTime: (time) => dispatch(actions.setCurrentTime(time)),
       togglePause: (pause) => dispatch(actions.togglePause()),
     }
   }
