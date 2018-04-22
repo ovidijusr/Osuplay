@@ -29,6 +29,7 @@ class Player extends Component {
     // When audio play starts
     audio.addEventListener('loadeddata', (e) => {
       const playTime = Math.floor(e.target.duration);
+      this.props.actions.setCurrentTime(0);
       this.props.actions.setTotalTime(playTime);
     });
 
@@ -83,6 +84,12 @@ class Player extends Component {
   }
 
   render() {
+    const currentAudioTime = () => (Math.round(this.audioEl.currentTime));
+
+    if (this.props.currentTime && (Math.abs(currentAudioTime() - this.props.currentTime) > 1)) {
+      this.audioEl.currentTime = this.props.currentTime
+    }
+
     if (typeof this.props.pause === "boolean") {
       if (this.props.pause && !this.audioEl.paused) {
         this.audioEl.pause()
@@ -115,7 +122,7 @@ class Player extends Component {
         className={`player ${this.props.className}`}
         controls={controls}
         loop={this.props.loop}
-        muted={this.props.muted}
+        muted={false}
         onPlay={this.onPlay}
         preload={this.props.preload}
         ref={(ref) => { this.audioEl = ref; }}

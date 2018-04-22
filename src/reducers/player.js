@@ -1,6 +1,7 @@
 const initialState = {
-  state: false,
+  currentTime: 0,
 }
+
 const player = (state = initialState, action) => {
   switch (action.type) {
     case 'TOGGLE_PAUSE':
