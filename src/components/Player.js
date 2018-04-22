@@ -10,7 +10,6 @@ class Player extends Component {
       if (this.props.currentTime !== currentAudioTime) {
         this.props.actions.setCurrentTime(currentAudioTime);
       }
-
     }, 1000)
 
     audio.addEventListener('error', (e) => {
@@ -28,9 +27,9 @@ class Player extends Component {
     });
 
     // When audio play starts
-    audio.addEventListener('play', (e) => {
-      this.setListenTrack();
-      this.props.onPlay(e);
+    audio.addEventListener('loadeddata', (e) => {
+      const playTime = Math.floor(e.target.duration);
+      this.props.actions.setTotalTime(playTime);
     });
 
     // When unloading the audio player (switching to another src)

@@ -8,6 +8,11 @@ const player = (state = initialState, action) => {
         ...state,
         pause: !state.pause,
       }
+    case 'SET_TOTAL_TIME':
+      return {
+        ...state,
+        totalTime: action.payload,
+      }
     case 'SET_SONG':
       return {
         ...state,
