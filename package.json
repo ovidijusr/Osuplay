@@ -8,6 +8,7 @@
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.1.4",
+    "react-video-seek-slider": "^1.2.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-thunk": "^2.2.0",
