@@ -5,6 +5,10 @@ const initialState = {
 
 const player = (state = initialState, action) => {
   switch (action.type) {
+    case 'NEXT_SONG':
+      return {
+        ...state
+      }
     case 'TOGGLE_PAUSE':
       return {
         ...state,

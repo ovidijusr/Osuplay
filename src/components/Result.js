@@ -4,14 +4,14 @@ import './Result.css';
 function Result(props) {
   return (
     <div
-      onClick={props.onClick}
       className={props.className}
     >
       {props.children}
       <img
-        src={props.background}
         alt=""
         className="result__image"
+        src={props.background}
+        onClick={props.onClick}
       />
       <div className="result__text-container">
         <span className="result__text-song-name">
@@ -20,6 +20,11 @@ function Result(props) {
         <span className="result__text-song-artist">
           {props.artist}
         </span>
+        <div
+          onClick={() => props.onPlaylistAdd()}
+        >
+          add to playlist
+        </div>
       </div>
     </div>
   )

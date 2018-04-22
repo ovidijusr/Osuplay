@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './Content.css';
 import * as actions from '../actions/player';
+import * as playlistActions from '../actions/playlist';
 import Result from '../components/Result';
 import API from '../utils/api';
 
@@ -12,6 +13,15 @@ class Content extends Component {
     const renderContent = results.search.result.map((result,i) =>
       <Result
         onClick={() => actions.setSong(API.getSong(result.ranked_id))}
+        onPlaylistAdd={() => actions.addToPlaylist({
+          key: 'queue',
+          data: {
+            id: result.ranked_id,
+            name: result.title,
+            url: API.getSong(result.ranked_id),
+            image: API.getImage(result.ranked_id, 128, 128),
+          }
+        })}
         background={API.getImage(result.ranked_id, 128, 128)}
         artist={result.title.split("-")[0]}
         songName={result.title.split("-")[1]}
@@ -36,6 +46,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch) => ({
   actions: {
     setSong: (id) => dispatch(actions.setSong(id)),
+    addToPlaylist: (key, data) => dispatch(playlistActions.addToPlaylist(key,data))
   }
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Content);
