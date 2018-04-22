@@ -1,5 +1,6 @@
 const initialState = {
   currentTime: 0,
+  volume: 0.8,
 }
 
 const player = (state = initialState, action) => {
@@ -28,7 +29,7 @@ const player = (state = initialState, action) => {
     case 'SET_VOLUME':
       return {
         ...state,
-        volume: action.volume,
+        volume: action.payload,
       }
     default:
       return state;

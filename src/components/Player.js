@@ -10,7 +10,7 @@ class Player extends Component {
       if (this.props.currentTime !== currentAudioTime) {
         this.props.actions.setCurrentTime(currentAudioTime);
       }
-    }, 1000)
+    }, 1000);
 
     audio.addEventListener('error', (e) => {
       this.props.onError(e);
@@ -85,6 +85,10 @@ class Player extends Component {
 
   render() {
     const currentAudioTime = () => (Math.round(this.audioEl.currentTime));
+
+    if (this.audioEl && this.props.volume !== this.audioEl.volume) {
+      this.audioEl.volume = this.props.volume;
+    }
 
     if (this.props.currentTime && (Math.abs(currentAudioTime() - this.props.currentTime) > 1)) {
       this.audioEl.currentTime = this.props.currentTime

@@ -9,6 +9,7 @@ import PlayerButton from '../components/PlayerButton';
 import * as actions from '../actions/player';
 import playButton from '../images/icons/music-play.svg';
 import pauseButton from '../images/icons/music-pause.svg';
+import VolumeSlider from '../components/VolumeSlider';
 
 class Footer extends Component {
   render() {
@@ -26,6 +27,8 @@ class Footer extends Component {
             secondsPrefix="00:00:"
             minutesPrefix="00:"
           />
+
+          <div>test</div>
           <PlayerButton
             className="player-button"
             onClick={() => this.props.actions.togglePause()}
@@ -35,12 +38,12 @@ class Footer extends Component {
             }
             src=""
           />
-          {/* <PlayerSeeker
-            currentTime={player.currentTime}
-            totalTime={player.totalTime}
-          /> */}
           <Player
             {...({...player, actions: {...actions}} )}
+          />
+          <VolumeSlider
+            volume={player.volume}
+            setVolumeFn={actions.setVolume}
           />
         </div>
     )
@@ -56,6 +59,7 @@ const mapDispatchToProps = (dispatch) => (
       setSong: (id) => dispatch(actions.setSong(id)),
       setTotalTime: (time) => dispatch(actions.setTotalTime(time)),
       setCurrentTime: (time) => dispatch(actions.setCurrentTime(time)),
+      setVolume: (volume) => dispatch(actions.setVolume(volume)),
       togglePause: (pause) => dispatch(actions.togglePause()),
     }
   }

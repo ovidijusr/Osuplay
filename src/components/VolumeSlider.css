@@ -1,0 +1,8 @@
+.volume-slider__range {
+  -webkit-appearance: none;
+  background: teal; }
+  .volume-slider__range::-webkit-slider-thumb {
+    appearance: none;
+    background: white;
+    width: 10px;
+    height: 10px; }
