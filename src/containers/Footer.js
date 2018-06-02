@@ -32,7 +32,6 @@ class Footer extends Component {
             minutesPrefix="00:"
           />
 
-          <div>test</div>
           <PlayerButton
             className="player-button"
             onClick={() => actions.previousSong()}

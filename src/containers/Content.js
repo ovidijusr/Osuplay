@@ -12,16 +12,8 @@ class Content extends Component {
     const { results, actions } = this.props;
     const renderContent = results.search.result.map((result,i) =>
       <Result
-        onClick={() => actions.setSong(API.getSong(result.ranked_id))}
-        onPlaylistAdd={() => actions.addToPlaylist({
-          key: 'queue',
-          data: {
-            id: result.ranked_id,
-            name: result.title,
-            url: API.getSong(result.ranked_id),
-            image: API.getImage(result.ranked_id, 128, 128),
-          }
-        })}
+        onClick={() => actions.setSong(getSongData(result))}
+        onPlaylistAdd={() => actions.addToPlaylist(getSongData(result))}
         background={API.getImage(result.ranked_id, 128, 128)}
         artist={result.title.split("-")[0]}
         songName={result.title.split("-")[1]}
@@ -39,6 +31,16 @@ class Content extends Component {
   }
 
 }
+const getSongData = (result) => ({
+  key: 'queue',
+  data: {
+    id: result.ranked_id,
+    name: result.title,
+    url: API.getSong(result.ranked_id),
+    image: API.getImage(result.ranked_id, 128, 128),
+  }
+})
+
 const mapStateToProps = (state, ownProps) => ({
   results: state.results,
 });

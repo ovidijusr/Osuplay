@@ -22,7 +22,6 @@ const player = (state = initialState, action) => {
     case 'SET_SONG':
       return {
         ...state,
-        song: action.payload,
         pause: false,
       }
     case 'SET_CURRENT_TIME':

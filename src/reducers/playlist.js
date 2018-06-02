@@ -15,6 +15,12 @@ const playlist = (state = initialState, action) => {
       newList.lists[action.payload.key].push(action.payload.data);
       return newList;
     }
+    case 'SET_SONG': {
+      const newList = {...state};
+      newList.lists[action.payload.key].push(action.payload.data);
+      newList.playlistState.key = newList.lists[action.payload.key].length - 1
+      return newList;
+    }
     case 'PREVIOUS_SONG': {
       return {
         ...state,
