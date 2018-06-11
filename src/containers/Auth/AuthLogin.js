@@ -37,17 +37,13 @@ class AuthLogin extends Component {
     firebase
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(data => {
-        console.log('win',data)
-      })
       .catch(error => {
         this.setState({errorMessage: error.message})
     });
   }
-
   render() {
     return (
-      <div className="auth">
+    <div className="auth">
       <div className="auth-header">
         <div className="auth-header__item">Login</div>
         <div
@@ -57,10 +53,10 @@ class AuthLogin extends Component {
           Register
         </div>
       </div>
-    <form
-      className="auth-form"
-      onSubmit={this.handleFormSubmit}
-    >
+      <form
+        className="auth-form"
+        onSubmit={this.handleFormSubmit}
+      >
       <img
         className="auth-form__logo"
         src={osuPlayLogo}
@@ -91,7 +87,10 @@ class AuthLogin extends Component {
           required
           value={this.state.password}
         />
-        <div className="auth-form__field-alt-text">
+        <div
+          className="auth-form__field-alt-text"
+          onClick={() => this.props.actions.setPage("forgot")}
+        >
           Did you forget your password?
         </div>
       </div>
@@ -107,7 +106,6 @@ class AuthLogin extends Component {
 }
 
 AuthLogin.propTypes = propTypes
-
 AuthLogin.defaultProps = defaultProps
 
 export default AuthLogin

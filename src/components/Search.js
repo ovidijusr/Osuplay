@@ -14,8 +14,8 @@ export default class Search extends Component {
           onKeyUp={(e) => this.props.actions.searchSong({
             name: e.target.value,
           })}
-          placeholder="Enter your favorite song or artist name!"
-          className="search__input" type="text" name="searchbar"/>
+          placeholder="Enter song name"
+          className="search__input" type="search" name="searchbar"/>
       </div>
     )
   }

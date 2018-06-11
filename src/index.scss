@@ -1,3 +1,8 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
+
 @font-face {
   font-family: "font";
   font-weight: 400;
@@ -18,4 +23,8 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+textarea, select, input, button {
+  outline: none;
 }

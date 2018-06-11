@@ -1,15 +1,30 @@
 .header {
-  background-color: #5D9CEC;
-  color: white;
+  background-color: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(183,195,243,0.28);
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 5px 20px;
   box-sizing: border-box;
   width: 100%;
 
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-item {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    &:first-of-type {
+      margin-left: 10px
+    }
+  }
+
   &__search {
     display: flex;
-    flex-basis: 60%;
+    width: 100%;
+    margin-left: 50px;
   }
 
   &__title {
@@ -23,14 +38,57 @@
   }
 
   &__logo {
-    height: 40px;
-    width: 40px;
+    height: 76px;
+    width: 76px;
   }
 
   &__menu {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: flex-end;
+
+    &-hover {
+      position: absolute;
+      top: 60px;
+      left: 15px;
+      width: 114px;
+      background-color: #FFF;
+      box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
+      padding: 0 10px;
+
+      &-background {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+
+    &-username {
+      font-size: 19px;
+      font-weight: 700;
+      padding: 15px;
+
+      &::after {
+        content: 'v';
+        display: inline;
+        width: 10px;
+        height: 1em;
+        color: transparent;
+        background-repeat: no-repeat;
+        vertical-align: baseline;
+        margin: 0 6px;
+        background-position: center;
+        background-size: 10px;
+        background-image: url('../images/icons/arrow-down.svg');
+      }
+    }
+
+    &-image {
+      border-radius: 100%;
+    }
   }
 
   @media(max-width:720px) {

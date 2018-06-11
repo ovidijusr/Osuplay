@@ -2,18 +2,25 @@
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 355px;
   height: 100%; }
+  .search ::placeholder {
+    color: #B7C3F3; }
   .search__input {
-    height: 40px;
-    width: 100%;
-    font-size: 18px;
+    background: url("../images/icons/search.svg");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 35px;
+    height: 36px;
+    font-size: 14px;
     color: rgba(10, 10, 10, 0.62);
     margin: 0;
     border: 0;
     border-radius: 40px;
-    padding: 0 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: center; }
+    box-shadow: 0 2px 8px 0 rgba(183, 195, 243, 0.28);
+    border: 1px solid #B7C3F3;
+    width: 100%; }
     .search__input:focus {
       text-align: left; }
   .search__button {

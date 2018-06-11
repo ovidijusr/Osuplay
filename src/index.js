@@ -7,31 +7,11 @@ import * as firebase from "firebase";
 import firebaseConfig from "./utils/firebase.config"
 import osuplay from './reducers';
 import './index.css';
-import App from './containers/App';
 import Auth from './containers/Auth/Auth';
 
-firebase.initializeApp(firebaseConfig);
-// const databaseRef = firebase.database().ref();
-// databaseRef.child("test")
+import App from './containers/App';
 
-var provider = new firebase.auth.GoogleAuthProvider();
-// firebase.auth().signInWithPopup(provider).then(function(result) {
-//   // This gives you a Google Access Token. You can use it to access the Google API.
-//   var token = result.credential.accessToken;
-//   // The signed-in user info.
-//   var user = result.user;
-//   console.log(user)
-//   // ...
-// }).catch(function(error) {
-//   // Handle Errors here.
-//   var errorCode = error.code;
-//   var errorMessage = error.message;
-//   // The email of the user's account used.
-//   var email = error.email;
-//   // The firebase.auth.AuthCredential type that was used.
-//   var credential = error.credential;
-//   // ...
-// });
+firebase.initializeApp(firebaseConfig);
 
 const store = createStore(
   osuplay,
@@ -39,11 +19,27 @@ const store = createStore(
   applyMiddleware(thunk),
 );
 
-const isLoggedin = false;
 const root = document.getElementById('root');
-render(
-  <Provider store={store}>
-    {isLoggedin ? <App /> : <Auth /> }
-  </Provider>
-, root);
+
+render (
+  <div>.</div>, root
+)
+firebase.auth().onAuthStateChanged((state) => {
+  if (state) {
+    store.dispatch({
+      type: 'SET_USER_DATA',
+      payload: state,
+    })
+  }
+
+  render(
+    <Provider store={store}>
+      {!!state ? <App /> : <Auth /> }
+    </Provider>
+  , root);
+
+
+})
+
+
 
