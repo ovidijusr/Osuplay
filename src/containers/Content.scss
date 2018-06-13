@@ -1,9 +1,24 @@
 .content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 
+  &__wrapper {
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  &__query {
+    font-size: 43px;
+    margin-bottom: 0;
+  }
+
+  &__results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   &__result {
-    flex-basis: 20%;
+    flex-basis: 25%;
   }
 }

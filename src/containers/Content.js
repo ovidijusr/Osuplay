@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
 import './Content.css';
 import * as actions from '../actions/player';
@@ -25,7 +25,17 @@ class Content extends Component {
     );
     return (
       <div className="content">
-        {renderContent}
+        <div className="content__wrapper">
+        {
+          results.search.query &&
+          <h1 className="content__query">
+            Search for {results.search.query}
+          </h1>
+        }
+        <div className="content__results">
+          {renderContent}
+        </div>
+        </div>
       </div>
     );
   }

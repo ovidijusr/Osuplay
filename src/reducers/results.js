@@ -22,6 +22,7 @@ const results = (state = initialState, action) => {
         search : {
           ...state.search,
           isLoading: true,
+          query: action.payload.name,
         }
       }
     case 'RECEIVED_SEARCH':

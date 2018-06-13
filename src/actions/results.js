@@ -11,6 +11,7 @@ export const searchSong = payload => (dispatch, getState) => {
 
   dispatch({
     type: 'FETCHING_SEARCH',
+    payload: payload,
   });
   Promise
     .resolve(
