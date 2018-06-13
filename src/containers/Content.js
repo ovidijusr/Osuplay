@@ -7,21 +7,28 @@ import Result from '../components/Result';
 import API from '../utils/api';
 
 class Content extends Component {
+  isSongChosen(id){
+    const { playlistState, lists } = this.props.playlist;
+    return lists.queue[playlistState.key] && lists.queue[playlistState.key].id === id
+  }
 
   render() {
-    const { results, actions } = this.props;
+    const { results, actions, playlist, player } = this.props;
+    const { playlistState, lists } = playlist;
     const renderContent = results.search.result.map((result,i) =>
       <Result
-        onClick={() => actions.setSong(getSongData(result))}
+        onClick={() => !this.isSongChosen(result.ranked_id) ?
+          actions.setSong(getSongData(result)) :
+          actions.togglePause()
+        }
         onPlaylistAdd={() => actions.addToPlaylist(getSongData(result))}
-        background={API.getImage(result.ranked_id, 128, 128)}
+        background={API.getImage(result.ranked_id, 180, 180)}
         artist={result.title.split("-")[0]}
         songName={result.title.split("-")[1]}
+        isPlaying={this.isSongChosen(result.ranked_id) && !player.pause} // TODO MAKE IT SMALLER
         className="content__result result"
         key={i}
-      >
-        {result.name}
-      </Result>
+      />
     );
     return (
       <div className="content">
@@ -53,11 +60,14 @@ const getSongData = (result) => ({
 
 const mapStateToProps = (state, ownProps) => ({
   results: state.results,
+  playlist: state.playlist,
+  player: state.player,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: {
     setSong: (id) => dispatch(actions.setSong(id)),
+    togglePause: (pause) => dispatch(actions.togglePause()),
     addToPlaylist: (key, data) => dispatch(playlistActions.addToPlaylist(key,data))
   }
 })

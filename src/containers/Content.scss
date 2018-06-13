@@ -1,10 +1,12 @@
 .content {
   display: flex;
   justify-content: center;
+  margin-bottom: 100px; // find a better solution
 
   &__wrapper {
     max-width: 1200px;
     width: 100%;
+    padding: 0 15px;
   }
 
   &__query {
@@ -15,10 +17,7 @@
   &__results {
     display: flex;
     flex-wrap: wrap;
+    flex-flow: column;
     justify-content: space-between;
-  }
-
-  &__result {
-    flex-basis: 25%;
   }
 }

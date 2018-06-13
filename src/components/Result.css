@@ -1,16 +1,34 @@
 .result {
-  width: 128px;
-  margin: 20px 0;
-  height: 128px;
+  width: 100%;
+  border-bottom: 1px solid #B7C3F3;
+  margin: 10px 0;
   background-size: cover;
-  display: flex; }
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .result__image {
+    width: 90px;
+    height: 90px; }
+  .result__song-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column; }
+  .result__song-action {
+    width: 45px;
+    height: 45px;
+    margin: 0 20px; }
+  .result__song-info {
+    display: flex;
+    margin-bottom: 10px; }
   .result__text-container {
     display: flex;
     flex-direction: column;
-    margin-left: 5px; }
+    justify-content: space-between;
+    margin-left: 13px; }
   .result__text-song-name {
     margin-bottom: 5px;
-    font-size: 14px; }
+    font-size: 21px;
+    font-weight: bold; }
   .result__text-song-artist {
-    color: gray;
-    font-size: 10px; }
+    color: black;
+    font-size: 21px; }

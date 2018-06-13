@@ -41,7 +41,7 @@ class Footer extends Component {
           <PlayerButton
             className="player-button"
             onClick={() => actions.togglePause()}
-            icon={player.pause || !player.song ?
+            icon={player.pause ?
               playButton :
               pauseButton
             }

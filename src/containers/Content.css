@@ -1,15 +1,16 @@
 .content {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 100px; }
   .content__wrapper {
     max-width: 1200px;
-    width: 100%; }
+    width: 100%;
+    padding: 0 15px; }
   .content__query {
     font-size: 43px;
     margin-bottom: 0; }
   .content__results {
     display: flex;
     flex-wrap: wrap;
+    flex-flow: column;
     justify-content: space-between; }
-  .content__result {
-    flex-basis: 25%; }
